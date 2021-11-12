@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<form method="post" action="cliente">
+        {% csrf_token %}
+    <center>
+    <H1><B>FICHA DEL CLIENTE</B></H1>
+       NOMBRE<input type="text" name="nombre" value="" />
+       PRIMER APELLIDO<input type="text" name="apellido1" value="" />
+       SEGUNDO APELLIDO<input type="text" name="apellido2" value="" /><br/>
+       DOMICILIO<input type="text" name="domicilio" value="" /><br/>
+       CIUDAD<select name="ciudad">
+            <option value="Madrid">Madrid</option>
+            <option  value="Segovia">Segovia</option>
+            <option value="Sevilla"> Sevilla</option>
+            </select>
+            <H2>SEXO</H2>HOMBRE<input type="radio" name="sexo" value="varon" />
+                                MUJER<input type="radio" name="sexo" value="mujer" /><br/>
+                <H2>SISTEMA OPERATIVO</H2>
+                XP HOME<input type="checkbox" name="so" value="xphome" />
+                WINDOWS 10<input type="checkbox" name="so" value="vista" />
+                MAC OS<input type="checkbox" name="so" value="mac" />
+            <H2>COMENTARIOS</H2><textarea name="comentarios" roWs="10" cols="70"></textarea><br/>
+            <input type="SUBMIT" value="Registrar" />
+            <input type="RESET" value="Borrar" />
+
+   </center>
+</form>
+
+    {% if resultado %}
+             <H3>Alta realizada con éxito. Número de registros afectados:{{resultado}} </H3>
+    {% endif %}
+</body>
+</html>
